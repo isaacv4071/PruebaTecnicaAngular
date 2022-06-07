@@ -94,24 +94,29 @@ export class LoginComponent implements OnInit {
         }
         this.loginInProgress = true;
         this.toastService.info("Iniciando, espere un momento.");
-        const user = this.form.value["user"];
-        const password = this.form.value["password"];
+        const user = { email: this.form.value["user"], password: this.form.value["password"] }
         localStorage.setItem("RememberMe", this.rememberUser ? "true" : "false");
         // validate credentials
-        //
-        this.toastService.success(
-          "Bienvenido '" + this.authService.getNames({firstName: true, lastName: true}) + "'",
-          "Exito"
+        this.authService.login(user).subscribe(data => {
+          this.authService.setToken(data.token);
+          this.toastService.success(
+            "Bienvenido '" + this.authService.getNames({ firstName: true, lastName: true }) + "'",
+            "Exito"
+          );
+          this.router.navigateByUrl("/home/dashboard");
+        },
+          error => {
+            this.toastService.error(
+              "Revise sus credenciales e intente de nuevo",
+              "Error"
+            );
+            this.loginInProgress = false;
+          }
         );
-        this.router.navigateByUrl("/home/dashboard");
+        //
       }
     } catch (e) {
       console.log(e);
-      this.toastService.error(
-        "Revise sus credenciales e intente de nuevo",
-        "Error"
-      );
-      this.loginInProgress = false;
     }
   }
 

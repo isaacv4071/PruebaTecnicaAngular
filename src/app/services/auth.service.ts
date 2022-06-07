@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from "../interfaces/user.type";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  loggedIn = false;
 
   private _authenticatedUser: User = {
     active: true,
@@ -17,7 +21,32 @@ export class AuthService {
     firstName: "Nombre"
   };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) { 
+  }
+
+  isAuthenticated() {
+    const promise = new Promise(
+      (resolve, reject) => {
+        setTimeout(() => {
+          resolve(this.loggedIn);
+        }, 800);
+      }
+    );
+    return promise;
+  }
+
+  login(user: any): Observable<any> {
+    this.loggedIn = true;
+    return this.http.post(environment.api, user);
+  }
+
+  setToken(token: string) {
+    sessionStorage.setItem('token', token);
+  }
+
+  removeToken(): void{
+    sessionStorage.removeItem('token');
+    this.loggedIn = false;
   }
 
   public getNames(names: {firstName?: boolean, secondName?: boolean, lastName?: boolean, secondLastName?: boolean}){
