@@ -36,7 +36,6 @@ export class AuthService {
   }
 
   login(user: any): Observable<any> {
-    this.loggedIn = true;
     return this.http.post(environment.api, user);
   }
 

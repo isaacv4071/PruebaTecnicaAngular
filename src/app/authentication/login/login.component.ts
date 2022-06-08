@@ -99,6 +99,7 @@ export class LoginComponent implements OnInit {
         // validate credentials
         this.authService.login(user).subscribe(data => {
           this.authService.setToken(data.token);
+          this.authService.loggedIn = true;
           this.toastService.success(
             "Bienvenido '" + this.authService.getNames({ firstName: true, lastName: true }) + "'",
             "Exito"

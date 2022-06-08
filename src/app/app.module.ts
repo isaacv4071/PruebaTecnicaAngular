@@ -17,12 +17,21 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from "./common/material/material.module";
+import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
+import { UsersComponent } from './users/users.component';
+import { CreateUsersComponent } from './users/create-users/create-users.component';
+import { DeleteUsersComponent } from './users/delete-users/delete-users.component';
+import { UpdateUsersComponent } from './users/update-users/update-users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    UsersComponent,
+    CreateUsersComponent,
+    DeleteUsersComponent,
+    UpdateUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,8 @@ import { HomeModule } from './home/home.module';
     NgSelectModule,
     InlineSVGModule.forRoot(),
     AutocompleteLibModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
