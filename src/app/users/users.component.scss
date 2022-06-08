@@ -1,0 +1,51 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+table {
+  width: 90%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+table {
+  th.mat-header-cell {
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+  }
+  td.mat-cell {
+    color: white;
+    text-align: center;
+  }
+  td.mat-cell-email {
+    font-size: 10px;
+  }
+  img {
+    border-radius: 50%;
+  }
+}
+
+.mat-icon {
+  font-size: 20px;
+}
+
+.Cmat-paginator {
+  width: 100%;
+
+  mat-paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+  }
+}

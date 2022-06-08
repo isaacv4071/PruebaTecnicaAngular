@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  private url = "https://reqres.in/api/users";
+  private url = "https://629e3ab9c6ef9335c0b12a95.mockapi.io/api/v1/users";
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<ResponseUsers> {
-    return this.http.get<ResponseUsers>(this.url);
+  getUsers(): Observable<ResponseUsers[]> {
+    return this.http.get<ResponseUsers[]>(this.url);
   }
 
   createUser(user: RequestCreate): Observable<ResponseCreate> {

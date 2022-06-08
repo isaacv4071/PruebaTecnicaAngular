@@ -1,0 +1,58 @@
+<div>
+    <div class="dashboard-wraper">
+        <div class="header">
+
+        </div>
+    </div>
+
+    <div class="ScrollBar dashboard-box-wrapper">
+        <br />
+        <div class="box">
+            <table mat-table [dataSource]="responseUsers | paginate:page_size:page_number">
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.first_name}} {{element.last_name}}</td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> Correo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef>
+                        Nuevo
+                        <button mat-icon-button color="primary">
+                            <mat-icon>add_circle</mat-icon>
+                        </button>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="primary">
+                            <mat-icon>remove_red_eye</mat-icon>
+                        </button>
+                        <button mat-icon-button color="accent">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <div class="Cmat-paginator">
+                <mat-paginator [length]="responseUsers?.length" [pageSize]="page_size" (page)="handlePage($event)"
+                    aria-label="Select page">
+                </mat-paginator>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

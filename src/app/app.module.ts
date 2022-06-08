@@ -23,6 +23,8 @@ import { UsersComponent } from './users/users.component';
 import { CreateUsersComponent } from './users/create-users/create-users.component';
 import { DeleteUsersComponent } from './users/delete-users/delete-users.component';
 import { UpdateUsersComponent } from './users/update-users/update-users.component';
+import { PaginatePipe } from './pipes/paginate.pipe';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { UpdateUsersComponent } from './users/update-users/update-users.componen
     CreateUsersComponent,
     DeleteUsersComponent,
     UpdateUsersComponent,
+    PaginatePipe,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { UpdateUsersComponent } from './users/update-users/update-users.componen
     InlineSVGModule.forRoot(),
     AutocompleteLibModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

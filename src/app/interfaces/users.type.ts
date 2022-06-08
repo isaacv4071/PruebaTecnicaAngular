@@ -1,15 +1,10 @@
 export interface User {
     id: number;
-    email: string;
     first_name: string;
     last_name: string;
-    avatar: string;
+    email: string;
 }
 export interface ResponseUsers {
-    page: number;
-    per_page: number;
-    total: number;
-    total_pages: number;
     data: User[];
 }
 export interface ResponseUser {
@@ -17,22 +12,24 @@ export interface ResponseUser {
 }
 
 export interface RequestCreate {
-    name: string;
-    job: string;
+    first_name: string;
+    last_name: string;
+    email: string;
 }
 export interface ResponseCreate {
-    name: string;
-    job: string;
+    first_name: string;
+    last_name: string;
+    email: string;
     id: string;
-    createdAt: Date;
 }
 export interface RequestUpdate {
-    name: string;
-    job: string;
+    first_name: string;
+    last_name: string;
+    email: string;
 }
 export interface ResponseUpdate {
-    name: string;
-    job: string;
+    first_name: string;
+    last_name: string;
+    email: string;
     id: string;
-    updatedAt: Date;
 }
