@@ -1,5 +1,21 @@
-<div mat-dialog-content>EDIT</div>
+
+<form #formulario="ngForm">
+    <div mat-dialog-content>
+        <label>
+            Nombre:
+            <input type="text" [formControl]="first_name">
+        </label>
+        <label>
+            Apellido:
+            <input type="text" [formControl]="last_name">
+        </label>
+        <label>
+            Email:
+            <input type="text" [formControl]="email">
+        </label>
+    </div>
+</form>
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="true">Ok</button>
+    <button mat-button id="btnCancel" (click)="onNoClick()">Cancelar</button>
+    <button mat-button id="btnSave" [mat-dialog-close]="true" (click)="submittedForm()">Editar</button>
 </div>

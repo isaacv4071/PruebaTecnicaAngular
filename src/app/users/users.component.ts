@@ -41,11 +41,9 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  openDialogEdit(): void {
+  openDialogEdit(id: string): void {
     const dialogRef = this.dialog.open(UpdateUsersComponent, {});
-    dialogRef.afterClosed().subscribe(result => {
-      //console.log(`Dialog result: ${result}`);
-    })
+    this.userService.setId(id);
   }
   
   page_size: number = 5;
