@@ -18,13 +18,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from "./common/material/material.module";
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import { HomeModule } from './home/home.module';
 import { UsersComponent } from './users/users.component';
 import { CreateUsersComponent } from './users/create-users/create-users.component';
-import { DeleteUsersComponent } from './users/delete-users/delete-users.component';
 import { UpdateUsersComponent } from './users/update-users/update-users.component';
 import { PaginatePipe } from './pipes/paginate.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -32,7 +34,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AppComponent,
     UsersComponent,
     CreateUsersComponent,
-    DeleteUsersComponent,
     UpdateUsersComponent,
     PaginatePipe,
   ],
@@ -51,7 +52,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AutocompleteLibModule,
     MaterialModule,
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoutesGuard } from '../guards/routes.guard';
 import { CreateUsersComponent } from '../users/create-users/create-users.component';
-import { DeleteUsersComponent } from '../users/delete-users/delete-users.component';
 import { UpdateUsersComponent } from '../users/update-users/update-users.component';
 import { UsersComponent } from '../users/users.component';
 
@@ -21,12 +20,7 @@ const routes: Routes = [
       {
         path: 'users',
         canActivate: [RoutesGuard],
-        component: UsersComponent,
-        children: [
-          { path: 'create', component: CreateUsersComponent },
-          { path: 'update/:id', component: UpdateUsersComponent },
-          { path: 'delete/:id', component: DeleteUsersComponent }
-        ]
+        component: UsersComponent
       },
       {
         path: "**",

@@ -1,1 +1,21 @@
-<p>create-users works!</p>
+
+<form #formulario="ngForm">
+    <div mat-dialog-content>
+        <label>
+            Nombre:
+            <input type="text" [formControl]="first_name">
+        </label>
+        <label>
+            Apellido:
+            <input type="text" [formControl]="last_name">
+        </label>
+        <label>
+            Email:
+            <input type="text" [formControl]="email">
+        </label>
+    </div>
+</form>
+<div mat-dialog-actions>
+    <button mat-button id="btnCancel" (click)="onNoClick()">Cancelar</button>
+    <button mat-button id="btnSave" [mat-dialog-close]="true" (click)="formularioEnviado()">Agregar</button>
+</div>

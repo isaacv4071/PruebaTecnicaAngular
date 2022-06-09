@@ -16,8 +16,8 @@ export class RoutesGuard implements CanActivate {
 
     return this.authService.isAuthenticated()
       .then(
-        (authenticated: boolean) => {
-          if (authenticated) {
+        () => {
+          if (this.authService.getToken() != null) {
             return true;
           } else {
             this.router.navigate(['/']);

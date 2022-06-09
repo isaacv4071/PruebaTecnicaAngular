@@ -26,18 +26,15 @@
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef>
                         Nuevo
-                        <button mat-icon-button color="primary">
+                        <button mat-icon-button color="primary" (click)="openDialogAdd()">
                             <mat-icon>add_circle</mat-icon>
                         </button>
                     </th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-icon-button color="primary">
-                            <mat-icon>remove_red_eye</mat-icon>
-                        </button>
-                        <button mat-icon-button color="accent">
+                        <button mat-icon-button color="accent" (click)="openDialogEdit()">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn">
+                        <button mat-icon-button color="warn" (click)="DialogDelete(element.position)">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </td>

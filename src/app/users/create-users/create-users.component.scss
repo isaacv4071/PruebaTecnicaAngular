@@ -1,0 +1,39 @@
+.mat-dialog-content {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #001e4d;
+}
+
+.mat-dialog-content {
+  
+  label {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }  
+    
+  input {
+    margin-bottom: 10px;
+    border-radius: 16px;
+    color: #001e4d;
+  }
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  #btnCancel {
+    background-color: #f44336;
+    color: white;
+  }
+
+  #btnSave {
+    background-color: #4caf50;
+    color: white;
+  }
+}

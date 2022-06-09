@@ -28,7 +28,7 @@ export class AuthService {
     const promise = new Promise(
       (resolve, reject) => {
         setTimeout(() => {
-          resolve(this.loggedIn);
+          resolve(this.getToken());
         }, 800);
       }
     );
@@ -41,6 +41,10 @@ export class AuthService {
 
   setToken(token: string) {
     sessionStorage.setItem('token', token);
+  }
+
+  getToken() {
+    return sessionStorage.getItem('token');
   }
 
   removeToken(): void{
