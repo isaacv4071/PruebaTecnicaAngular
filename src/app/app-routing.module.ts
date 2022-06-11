@@ -26,8 +26,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(
     routes,
     {
-      preloadingStrategy: MyPreloadingStrategyService
-    }
+    preloadingStrategy: MyPreloadingStrategyService,
+    relativeLinkResolution: 'legacy'
+}
   )],
   exports: [RouterModule]
 })
