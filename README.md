@@ -24,6 +24,11 @@ _luego de este paso ejecutar el servido:_
 ng serve
 ```
 
+## Credenciales de acceso
+Usuario: eve.holt@reqres.in
+
+Contraseña: cityslicka
+
 Este proyecto fue realizado junto a la Api: https://reqres.in/ para la autenticación y para el CRUD se utilizo una realiza en https://mockapi.io/ ya que esta permitia hacer las peticiones necesarias.
 
 ## Detalles Tecnicos de la ejecución 🔧
